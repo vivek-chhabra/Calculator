@@ -3,6 +3,16 @@ const buttons = document.querySelectorAll(".button");
 const allClear = document.querySelector("#ac");
 const del = document.querySelector("#de");
 
+// function ==========================================================================================================================
+
+// clear the value
+function clearAll() {
+  value = "";
+  result.value = value;
+}
+
+// ===================================================================================================================================
+
 // click effect
 buttons.forEach((ele) => {
   ele.addEventListener("click", () => {
@@ -13,14 +23,30 @@ buttons.forEach((ele) => {
   });
 });
 
-let value = "";
+// functionality of the buttons
+var value = "";
 buttons.forEach((ele) => {
   ele.addEventListener("click", () => {
     if (ele.innerText == "=") {
-      value = eval(value);
+      if (value == "Wrong Expression") {
+        clearAll();
+      }
+      try {
+        value = eval(value);
+      } catch (err) {
+        value = "Wrong Expression";
+      }
+      result.value = value;
+    } else if (ele.innerText == "pi") {
+      if (value == "Wrong Expression") {
+        clearAll();
+      }
+      value += "3.14";
       result.value = value;
     } else if (ele.innerText != "AC" && ele.innerText != "DE") {
-      console.log(value.length);
+      if (value == "Wrong Expression") {
+        clearAll();
+      }
       value += ele.innerText;
       result.value = value;
     }
@@ -29,16 +55,15 @@ buttons.forEach((ele) => {
 
 // to clear all calculations
 allClear.addEventListener("click", () => {
-  result.value = "";
-  value = "";
+  clearAll();
 });
 
 // to delete the input content one by one
 let newInput;
 let inputValue;
 del.addEventListener("click", () => {
-  let delChar = value.charAt(result.value.length - 1);
-  value = value.replace(delChar, "");
+  inputValue = result.value;
+  value = inputValue.substring(0, inputValue.length - 1);
   result.value = value;
 });
 
@@ -46,7 +71,6 @@ del.addEventListener("click", () => {
 result.addEventListener("keyup", (e) => {
   result.value = value;
 });
-
 // to disable the keys
 result.addEventListener("keydown", (e) => {
   result.value = value;
