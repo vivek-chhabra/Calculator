@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif;
+  box-sizing: border-box;
 }
 
 /* utility classes */
@@ -21,29 +22,53 @@
 
 /* utility classes end */
 
-.container {
+body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: rgb(190, 210, 255);
 }
 
 .calculator {
   background-color: rgb(32, 44, 73);
-  padding: 15px;
-  gap: 10px;
-  width: 225px;
-  height: 340px;
+  padding: 10px;
+  width: 100%;
+  min-width: 250px;
+  min-height: 340px;
   border-radius: 8px;
 }
 
-body {
-  background-color: rgb(190, 210, 255);
+.operations {
+  width: 100%;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 23px;
+  gap: 13px;
+  padding: 8px;
+  padding-bottom: 29px;
+}
+
+.rows {
+  display: flex;
+  gap: 15px;
+}
+
+.rows .part-1 {
+  gap: 17px;
+  flex: 1;
+}
+
+.part-2 {
+  width: 105px !important;
 }
 
 .button {
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   background-color: rgb(32, 44, 73);
   box-shadow: -2px -2px 5px rgb(125, 139, 172);
   display: flex;
@@ -59,30 +84,6 @@ body {
   cursor: pointer;
 }
 
-.operations {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 23px;
-  gap: 11px;
-}
-
-.rows {
-  display: flex;
-  gap: 11px;
-}
-
-.rows .part-1 {
-  gap: 10px;
-  flex: 1;
-}
-
-.part-2 {
-  width: 100px;
-}
-
 .click {
   transform: scale(1);
   box-shadow: 0 0;
@@ -90,12 +91,16 @@ body {
 }
 
 .result {
-  width: 100%;
-  display: ;
-  float: right;
-
-  /* background-color: white; */
-  color: rgb(255, 255, 255);
+  width: 250px;
+  color: rgb(190, 210, 255);
+  background-color: transparent;
   font-weight: 500;
   font-size: 150%;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  position: relative;
+  top: 7px;
+  letter-spacing: 1px;
+  text-align: right;
 }
