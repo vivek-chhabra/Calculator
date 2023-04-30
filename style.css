@@ -57,15 +57,6 @@ body {
   gap: 15px;
 }
 
-.rows .part-1 {
-  gap: 17px;
-  flex: 1;
-}
-
-.part-2 {
-  width: 105px !important;
-}
-
 .button {
   width: 46px;
   height: 46px;
