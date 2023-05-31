@@ -1,6 +1,6 @@
 # 🧮 Calculator
 
-## Welcome to the Calculator project! This application provides a simple calculator that can perform basic calculations. You can use it to perform addition, subtraction, multiplication, and division operations. The calculator displays the result of your calculations in real-time, allowing for easy and convenient number crunching.**
+**Welcome to the Calculator project! This application provides a simple calculator that can perform basic calculations. You can use it to perform addition, subtraction, multiplication, and division operations. The calculator displays the result of your calculations in real-time, allowing for easy and convenient number crunching.**
 
 <br>
 
